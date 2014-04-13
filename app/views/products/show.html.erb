@@ -1,2 +1,6 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<section>
+  <h3><%= @product.title%></h3>
+  <p><%= @product.description %></p>
+</section>
+
+<p><%= link_to 'Home' , root_path %></p>

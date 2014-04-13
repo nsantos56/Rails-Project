@@ -1,5 +1,5 @@
 RailsProject::Application.routes.draw do
-
+  
   resources :categories
 
   get    'products',            to: 'products#index', as: 'products'

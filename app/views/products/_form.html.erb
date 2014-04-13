@@ -1,0 +1,33 @@
+<%= form_for @product do |f|%>
+  <% if @product.errors.any? %>
+    <p>There were <%= pluralize @product.errors.count , 'error'%> that prevented your product from being added</p>
+    <ul>
+     <% @product.errors.full_messages.each do |msg|%>
+     <li><%= msg %></li>
+     <% end %>
+    <ul>
+  <% end %>
+  <div>
+    <%= f.label :title%>
+    <br>
+    <%= f.text_field :title%>
+  <div>
+   <div>
+    <%= f.label :description%>
+    <br>
+    <%= f.text_area :description%>
+  <div>
+   <div>
+    <%= f.label :price%>
+    <br>
+    <%= f.text_field :price%>
+  <div>
+   <div>
+    <%= f.label :stock_quantity%>
+    <br>
+    <%= f.text_field :stock_quantity%>
+  <div>
+  <div>
+    <%= f.submit "Update Product" %>
+  <div>
+<% end%>

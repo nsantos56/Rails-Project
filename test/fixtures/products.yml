@@ -4,10 +4,10 @@ one:
   title: MyString
   description: MyText
   price: 9.99
-  stock_quatity: 1
+  stock_quantity: 1
 
 two:
   title: MyString
   description: MyText
   price: 9.99
-  stock_quatity: 1
+  stock_quantity: 1

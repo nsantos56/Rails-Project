@@ -1,12 +1,8 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body
  {
     
     padding:0px;
     font-family:Helvetica;
-    
  }
 
 #container
@@ -43,6 +39,7 @@ header
     background:white;
     border:black solid 2px;
     background-color: #040404;
+    color: white;
 }
 
 aside
@@ -56,6 +53,11 @@ aside
     border:black solid 2px;
     background-color: #040404;
 }
+
+a:link {color:#FF00FF;}      /* unvisited link */
+a:visited {color:#FF00FF;}  /* visited link */
+a:hover {color:#FF00FF;}  /* mouse over link */
+a:active {color:#FF00FF;}  /* selected link */
 
 footer
 {
@@ -78,8 +80,9 @@ div.menu {
     position:static;
     border:black solid 2px;
     border-radius: 10px;
-    width:925px;
+    width:905px;
     margin-left:330px;
     height: 50px;
     padding:10px;
+    margin-left: 408px;
 }
