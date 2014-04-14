@@ -29,6 +29,7 @@
                 <tbody>
                   <% @products.each do |product| %>
                     <tr>
+                      <% if product.category.present? %>
                       <p>
                         <strong><%= link_to product.title, product %></strong>
                       </p>
@@ -43,6 +44,11 @@
                         <strong>Stock quantity:</strong>
                         <%= product.stock_quantity %>
                       </p>
+                      <p>
+                        <strong>Category:</strong>
+                        <%= product.category.name %>
+                      </p>
+                      <% end %>
                       <br>
                       <%= link_to 'edit', edit_product_path(product) %>
                     </tr>
