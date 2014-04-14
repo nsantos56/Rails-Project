@@ -1,38 +1,75 @@
-<%= form_for @product do |f|%>
-  <% if @product.errors.any? %>
-    <p>There were <%= pluralize @product.errors.count , 'error'%> that prevented your product from being added</p>
-    <ul>
-     <% @product.errors.full_messages.each do |msg|%>
-     <li><%= msg %></li>
-     <% end %>
-    <ul>
-  <% end %>
-  <div>
-    <%= f.label :title%>
-    <br>
-    <%= f.text_field :title%>
-  <div>
-   <div>
-    <%= f.label :description%>
-    <br>
-    <%= f.text_area :description%>
-  <div>
-   <div>
-    <%= f.label :price%>
-    <br>
-    <%= f.text_field :price%>
-  <div>
-   <div>
-    <%= f.label :stock_quantity%>
-    <br>
-    <%= f.text_field :stock_quantity%>
-  <div>
-  <div>
-    <%= f.label :category_id%>
-    <br>
-    <%= f.text_field :category_id%>
-  <div>
-  <div>
-    <%= f.submit "Update Product" %>
-  <div>
-<% end%>
+
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent">
+              <table>
+                <tbody>
+                 <%= form_for @product , :html => {:multiport => true } do |f|%>
+                    <% if @product.errors.any? %>
+                      <p>There were <%= pluralize @product.errors.count , 'error'%> that prevented your product from being added</p>
+                      <ul>
+                       <% @product.errors.full_messages.each do |msg|%>
+                       <li><%= msg %></li>
+                       <% end %>
+                      <ul>
+                    <% end %>
+                    <div>
+                      <%= f.label :title%>
+                      <br>
+                      <%= f.text_field :title%>
+                    <div>
+                     <div>
+                      <%= f.label :description%>
+                      <br>
+                      <%= f.text_area :description%>
+                    <div>
+                     <div>
+                      <%= f.label :price%>
+                      <br>
+                      <%= f.text_field :price%>
+                    <div>
+                     <div>
+                      <%= f.label :stock_quantity%>
+                      <br>
+                      <%= f.text_field :stock_quantity%>
+                    <div>
+                    <div>
+                      <%= f.label :category_id%>
+                      <br>
+                      <%= f.collection_select :category_id , @categories , :id , :name %>
+                    <div>
+                    <div>
+                      <%= f.file_field :photo%>
+                    <div>
+                    <div>
+                      <%= f.submit "Update Product" %>
+                    <div>
+                  <% end%>
+                </tbody>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>

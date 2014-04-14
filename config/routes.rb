@@ -1,6 +1,5 @@
 RailsProject::Application.routes.draw do
-  
-  resources :contacts
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

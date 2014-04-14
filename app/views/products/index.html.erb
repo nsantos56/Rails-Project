@@ -15,6 +15,13 @@
 <% end %>
 
 -->
+<% form_tag products_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,6 +34,7 @@
             <section id="maincontent">
               <table>
                 <tbody>
+                  <%= paginate @products%>
                   <% @products.each do |product| %>
                     <tr>
                       <% if product.category.present? %>
@@ -34,29 +42,37 @@
                         <strong><%= link_to product.title, product %></strong>
                       </p>
                       <p>
-                        <%= product.description %>
-                      </p>
-                      <p>
-                        <strong>Price:</strong>
-                          <%= product.price %>
-                      </p>
-                      <p>
-                        <strong>Stock quantity:</strong>
-                        <%= product.stock_quantity %>
-                      </p>
-                      <p>
-                        <strong>Category:</strong>
-                        <%= product.category.name %>
+                        <%= image_tag product.photo.url , :size => "260x180"%>
                       </p>
                       <% end %>
                       <br>
-                      <%= link_to 'edit', edit_product_path(product) %>
+                      <!--<%= link_to 'edit', edit_product_path(product) %>-->
                     </tr>
                   <% end %>
                 </tbody>
               </table>
             </section>
-            <aside><%= link_to 'Categories' , categories_path%></aside>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <div id="follow">
+              <h2>FOLLOW US</h2>
+              <a href="http://www.facebook.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/facebook_icon.png" /></a>
+              <a href="http://www.instagram.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/instagram_icon.png" /></a>
+              <a href="http://www.youtube.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/youtube_icon.png" /></a>
+              <a href="http://www.flickr.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/flickr_icon.png" /></a>
+            </div>
             <footer><%= link_to 'Categories' , new_product_path %></footer>
     </section>
   </body>

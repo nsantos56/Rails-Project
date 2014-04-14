@@ -3,6 +3,7 @@ body
     
     padding:0px;
     font-family:Helvetica;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(7%,#2c2c2c), color-stop(12%,#070707), color-stop(17%,#000000), color-stop(21%,#000000), color-stop(23%,#0a0a0a), color-stop(23%,#0a0a0a), color-stop(25%,#0a0a0a), color-stop(39%,#070707), color-stop(48%,#000000), color-stop(48%,#000000), color-stop(72%,#000000), color-stop(91%,#1c1c1c), color-stop(99%,#111111), color-stop(99%,#111111), color-stop(100%,#131313)); /* Chrome,Safari4+ */
  }
 
 #container
@@ -18,28 +19,22 @@ body
 
 header
 {
-    width:905px;
-    height:60px;
-    padding:10px;
-    margin:5px auto;
-    background:white;
-    border:black solid 2px;
-    font-size: 50px;
-    border-radius: 10px;
     
+    text-align: center;
 }
 
 #maincontent
 {
     float:right;
     width:610px;
-    height:900px;
+    height:auto;
     padding:10px;
     border-radius: 10px;
     background:white;
     border:black solid 2px;
     background-color: #040404;
     color: white;
+    margin-top: -1px;
 }
 
 aside
@@ -54,10 +49,11 @@ aside
     background-color: #040404;
 }
 
-a:link {color:#FF00FF;}      /* unvisited link */
-a:visited {color:#FF00FF;}  /* visited link */
-a:hover {color:#FF00FF;}  /* mouse over link */
-a:active {color:#FF00FF;}  /* selected link */
+a:link {color:#FF6A00;}      /* unvisited link */
+a:visited {color:#FF6A00;}  /* visited link */
+a:hover {color:#FF6A00;}  /* mouse over link */
+a:active {color:#FF6A00;}  /* selected link */
+
 
 footer
 {
@@ -84,5 +80,18 @@ div.menu {
     margin-left:330px;
     height: 50px;
     padding:10px;
-    margin-left: 408px;
+    margin-left: 327px;
+    background-color: #242424;
+}
+
+#follow {
+    float: left;
+    width:210px;
+    height:100px;
+    padding:10px;
+    border-radius: 10px;
+    background:white;
+    border:black solid 2px;
+    background-color: #040404;
+    margin-top: 10px;
 }

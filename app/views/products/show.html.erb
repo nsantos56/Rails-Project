@@ -1,6 +1,46 @@
-<section>
-  <h3><%= @product.title%></h3>
-  <p><%= @product.description %></p>
-</section>
 
-<p><%= link_to 'Home' , root_path %></p>
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent">
+              <section>
+            <h3><%= @product.title%></h3>
+            <p>
+              <%= image_tag @product.photo.url , :size => "260x180"%>
+            </p>
+            <p>
+              <%=  @product.description %>
+            </p>
+            <p>Price: $
+              <%=  @product.price %>
+            </p>
+            <p>Stock quantity:
+              <%= @product.stock_quantity %>
+            </p>
+          </section>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>

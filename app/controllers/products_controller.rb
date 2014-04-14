@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.page(params[:page]).per(4)
+    @categories = Category.all
   end
   
   def show
     @product = Product.find(params[:id])
+    @categories = Category.all
   end
 
   def new
@@ -14,6 +16,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @categories = Category.all
     if @product.save
       redirect_to aciton: :index
     else
@@ -28,6 +31,7 @@ class ProductsController < ApplicationController
 
   def update
       @product = Product.find(params[:id])
+      @categories = Category.all
       if @product.update_attributes(product_params)
         redirect_to @product
       else
@@ -46,6 +50,6 @@ class ProductsController < ApplicationController
   
   private
     def product_params
-     params.require(:product).permit(:title, :description , :price , :stock_quantity, :category_id)
+     params.require(:product).permit(:title, :description , :price , :stock_quantity, :category_id , :photo)
     end
 end

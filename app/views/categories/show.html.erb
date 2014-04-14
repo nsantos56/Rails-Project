@@ -1,9 +1,67 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<!--<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent">
+                <h1><%= @category.name %></h1>
+              <table>
+                <tbody>
+                  <tr>
+                  <p>
+                    <strong>Associated Products</strong>
+                    <% @category.products.each do |product| %>
+                    <p>
+                        <strong><%= link_to product.title, product %></strong>
+                      </p>
+                      <p>
+                         <%= image_tag product.photo.url , :size => "260x180"%>
+                      </p>
+                      <p>
+                        <%= product.description %>
+                      </p>
+                      <p>
+                        <strong>Price:</strong>
+                          <%= product.price %>
+                      </p>
+                      <p>
+                        <strong>Stock quantity:</strong>
+                        <%= product.stock_quantity %>
+                      </p>
+                      <p>
+                        <strong>Category:</strong>
+                        <%= product.category.name %>
+                      </p>
+                    <% end%>
+                    </p>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>
