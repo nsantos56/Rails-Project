@@ -39,6 +39,17 @@ class ProductsController < ApplicationController
       end
       
   end
+  
+  def search
+    
+  end
+  
+  def search_results
+     keywords = "%" + params[:search_keywords] + "%"
+     category_id = params[:id]
+    @found_product = Product.where("title LIKE '#{keywords}'  AND category_id = '#{category_id}'" ) 
+    @categories = Category.all
+  end
 
   def destroy
     @product = Product.find(params[:id])

@@ -12,7 +12,7 @@
               <section>
             <h3><%= @product.title%></h3>
             <p>
-              <%= image_tag @product.photo.url , :size => "260x180"%>
+              <%= image_tag @product.photo.url , :size => "460x258"%>
             </p>
             <p>
               <%=  @product.description %>
@@ -40,6 +40,13 @@
                 </tbody>
               </table>
             </aside>
+            <div id="follow">
+              <h2>FOLLOW US</h2>
+              <a href="http://www.facebook.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/facebook_icon.png" /></a>
+              <a href="http://www.instagram.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/instagram_icon.png" /></a>
+              <a href="http://www.youtube.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/youtube_icon.png" /></a>
+              <a href="http://www.flickr.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/flickr_icon.png" /></a>
+            </div>
             <footer><%= link_to 'Categories' , new_product_path %></footer>
     </section>
   </body>

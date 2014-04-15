@@ -13,6 +13,8 @@ RailsProject::Application.routes.draw do
   patch  'products/:id' ,       to: 'products#update'
   delete 'products/:id'   ,     to: 'products#destroy' , as: 'delete_product'
   
+  get 'search_results' => 'products#search_results' , as: 'search_results'
+  
   root 'products#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

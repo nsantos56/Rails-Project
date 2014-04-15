@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent">
+              <section>
+            <% if @found_product.empty? %>
+              <p>No results found.</p>
+            <% end %>
+            <% @found_product.each do |product| %>
+                    <tr>
+                      <p>
+                        <strong><%= link_to product.title, product %></strong>
+                      </p>
+                      <p>
+                        <%= image_tag product.photo.url , :size => "260x180"%>
+                      </p>
+                      <br>
+                      <!--<%= link_to 'edit', edit_product_path(product) %>-->
+                    </tr>
+                  <% end %>
+          </section>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>
