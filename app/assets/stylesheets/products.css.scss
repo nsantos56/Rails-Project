@@ -69,7 +69,7 @@ footer
 div.menu {
     margin-top: 10px;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 25px;
     font-style: oblique ;
     color: #FA630B;
     text-align: center;
@@ -100,9 +100,15 @@ div.menu {
 .menu input[type=text] {
     width: 80px;
     font-size: 12px;
+    height: 10px;
 }
 .menu input[type=submit] {
     width: 80px;
+    font-size: 12px;
+}
+
+.menu select {
+    width: 140px;
     font-size: 12px;
 }
 

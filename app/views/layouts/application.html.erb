@@ -17,7 +17,8 @@
       <td><%= link_to 'About US' , root_path%></td>
       <td>
         <%= text_field_tag :search_keywords %>
-        <%= collection_select(:titl, :id, Category.all, :id, :name) %>
+        <%= collection_select(:category_id, :title, Category.all, :id, :name) %>
+      
         <%= submit_tag "Search"%>
       </td>
      
