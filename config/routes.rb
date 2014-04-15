@@ -1,6 +1,8 @@
 RailsProject::Application.routes.draw do
 
 
+  get "cart/index"
+  get "cart/add"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories

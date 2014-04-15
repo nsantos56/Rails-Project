@@ -21,6 +21,17 @@
                       <p>
                         <%= image_tag product.photo.url , :size => "260x180"%>
                       </p>
+                      <p>
+                        <%= product.description %>
+                      </p>
+                      <p>
+                        <strong>Price:</strong>
+                          <%= product.price %>
+                      </p>
+                      <p>
+                        <strong>Stock quantity:</strong>
+                        <%= product.stock_quantity %>
+                      </p>
                       <br>
                       <!--<%= link_to 'edit', edit_product_path(product) %>-->
                     </tr>
