@@ -46,8 +46,8 @@ class ProductsController < ApplicationController
   
   def search_results
      keywords = "%" + params[:search_keywords] + "%"
-     category_id = params[:title]
-    @found_product = Product.where('title LIKE ?' , keywords ) 
+     category = params[:cat_id][:koko]
+    @found_product = Product.where('title LIKE ?  AND category_id = ?' , keywords, "#{category}" ) 
     @categories = Category.all
   end
 
