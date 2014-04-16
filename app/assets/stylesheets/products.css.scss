@@ -35,6 +35,7 @@ header
     background-color: #040404;
     color: white;
     margin-top: -1px;
+    margin-bottom: 10px;
 }
 
 aside
@@ -112,4 +113,11 @@ div.menu {
     font-size: 12px;
 }
 
+footer {
+    border:black solid 2px;
+    border-radius: 10px;
+    background-color: #242424;
+    margin-left: 270px;
+    width:610px;
+}
 

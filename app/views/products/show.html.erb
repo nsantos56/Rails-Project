@@ -23,6 +23,10 @@
             <p>Stock quantity:
               <%= @product.stock_quantity %>
             </p>
+            <p>
+              <%= link_to "Your Cart" , :controller => :cart , :action => :index%>
+              <%= button_to "Add to Cart" , :controller => :cart , :action => :add , :id => @product %>
+            </p>
           </section>
               </table>
             </section>

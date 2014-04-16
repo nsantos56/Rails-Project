@@ -1,8 +1,8 @@
 RailsProject::Application.routes.draw do
 
 
-  get "cart/index"
-  get "cart/add"
+ 
+  #get "cart/add"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories
@@ -16,6 +16,12 @@ RailsProject::Application.routes.draw do
   delete 'products/:id'   ,     to: 'products#destroy' , as: 'delete_product'
   
   get 'search_results' => 'products#search_results' , as: 'search_results'
+  
+  
+  post "cart/add/:id", to: "cart#add"
+  get  "cart/add/:id", to: "cart#index"
+  get  "cart/index"
+  
   
   root 'products#index'
   
