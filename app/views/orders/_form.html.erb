@@ -1,4 +1,16 @@
-<%= form_for(@order) do |f| %>
+
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent">
+              <section>
+           <%= form_for @order do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -10,11 +22,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :cart_id %><br>
-    <%= f.number_field :cart_id %>
-  </div>
   <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
@@ -24,8 +31,12 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
+    <%= f.label :card_number %><br>
+    <%= f.text_field :card_number %>
+  </div>
+  <div class="field">
     <%= f.label :card_type %><br>
-    <%= f.text_field :card_type %>
+    <%= f.select :card_type ,[["Visa", "visa"],["Mastercard","master"]] %>
   </div>
   <div class="field">
     <%= f.label :card_expires %><br>
@@ -35,3 +46,32 @@
     <%= f.submit %>
   </div>
 <% end %>
+          </section>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <div id="follow">
+              <h2>FOLLOW US</h2>
+              <a href="http://www.facebook.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/facebook_icon.png" /></a>
+              <a href="http://www.instagram.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/instagram_icon.png" /></a>
+              <a href="http://www.youtube.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/youtube_icon.png" /></a>
+              <a href="http://www.flickr.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/flickr_icon.png" /></a>
+            </div>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>
+
