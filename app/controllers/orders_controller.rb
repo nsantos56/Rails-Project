@@ -7,16 +7,19 @@ class OrdersController < InheritedResources::Base
   end
   
   def create
-    @order = Order.new(params[:order])
+    @order = Order.new(order_params)
+    @categories = Category.all
     if @order.save
-      flash @order.save
-      flash[:notice] = "Successfull created order"
-      redirect_to orders_url
+      redirect_to product_controller
     else
-      render :action => 'new'
-      #code
+      render :new
     end
     
   end
+  
+   private
+    def order_params
+     params.require(:order).permit(:first_name, :last_name , :card_number , :card_type, :card_expires )
+    end
 
 end
