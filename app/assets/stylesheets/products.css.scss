@@ -27,7 +27,7 @@ header
 {
     float:right;
     width:610px;
-    height:auto;
+    height:auto 90px;;
     padding:10px;
     border-radius: 10px;
     background:white;
@@ -123,4 +123,19 @@ footer {
 
 #cart_table > td{
     margin-left: 10px;
+}
+
+#maincontent2
+{
+    float:right;
+    width:610px;
+    height: 400px;;
+    padding:10px;
+    border-radius: 10px;
+    background:white;
+    border:black solid 2px;
+    background-color: #040404;
+    color: white;
+    margin-top: -1px;
+    margin-bottom: 10px;
 }

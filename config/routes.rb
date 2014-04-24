@@ -17,10 +17,11 @@ RailsProject::Application.routes.draw do
   
   get 'search_results' => 'products#search_results' , as: 'search_results'
   
-  
+  post  'orders/new/' , to: 'cart#index', as: 'order_path'
   post "cart/add/:id", to: "cart#add"
   get  "cart/add/:id", to: "cart#index"
   get  "cart/index"
+  
   
   
   root 'products#index'

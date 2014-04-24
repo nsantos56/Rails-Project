@@ -2,7 +2,6 @@ class CartController < ApplicationController
   def index
     
     @cart = session[:kart]
-    
     @products = Product.all
     @categories = Category.all
   end

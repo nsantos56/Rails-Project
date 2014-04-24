@@ -1,35 +1,41 @@
-<h1>Listing orders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cart</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Card type</th>
-      <th>Card expires</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.cart_id %></td>
-        <td><%= order.first_name %></td>
-        <td><%= order.last_name %></td>
-        <td><%= order.card_type %></td>
-        <td><%= order.card_expires %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>
+<!doctype html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <link rel="stylesheet" type="text/css" href="clearstyles.css" />
+          <title>Clear!</title>
+  </head>
+  <body>
+    <section id= "container">
+            <section id="maincontent2">
+                <p>
+                  Thank you for purchasing our product
+                </p>
+              </table>
+            </section>
+            <aside>
+              <table>
+                <h2>Categories</h2>
+                <tbody>
+                  <% @categories.each do |product| %>
+                    <tr>
+                      <p>
+                        <%= link_to product.name, product %>
+                      </p>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </aside>
+            <div id="follow">
+              <h2>FOLLOW US</h2>
+              <a href="http://www.facebook.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/facebook_icon.png" /></a>
+              <a href="http://www.instagram.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/instagram_icon.png" /></a>
+              <a href="http://www.youtube.com" target="blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/youtube_icon.png" /></a>
+              <a href="http://www.flickr.com" target="_blank"><img alt="" src="http://www.speedfactorracing.com/wp-content/themes/sf_theme/images/flickr_icon.png" /></a>
+            </div>
+            <footer><%= link_to 'Categories' , new_product_path %></footer>
+    </section>
+  </body>
+</html>
