@@ -1,5 +1,7 @@
 RailsProject::Application.routes.draw do
 
+  resources :orders
+
   #get "cart/add"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
