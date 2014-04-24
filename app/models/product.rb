@@ -8,7 +8,7 @@ module Paperclip
 end
 
 class Product < ActiveRecord::Base
-  belongs_to:category
+  belongs_to :category
   
   validates :title , :price , :stock_quantity , presence: true
   validates :price , numericality: {greater_thatn_or_equal_to: 0.01}
