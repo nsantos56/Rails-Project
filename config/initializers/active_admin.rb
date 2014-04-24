@@ -1,6 +1,6 @@
 ActiveAdmin.setup do |config|
 
-  # == Site Title
+  # == Site Title gfgdf
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
