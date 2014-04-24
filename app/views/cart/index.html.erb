@@ -21,6 +21,7 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
+<% total = 0%>
 
 <!doctype html>
 <html lang="en">
@@ -32,13 +33,20 @@
   <body>
     <section id= "container">
             <section id="maincontent">
-              <table>
+              <table id="cart_table">
                 <% @cart.each do |id,quantity|%>
                   <% item = Product.find(id) %>
                   <tr>
-                  <%= item.title %>
+                    <td><%= item.title %></td>
+                    <td><%= image_tag item.photo ,:width => 100  %></td>
+                    <td><%= item.price %></td>
                   </tr>
+                  <% total += item.price %>
                 <% end %>
+                <tr>
+                  <td>Total:<td/>
+                  <td ><%= number_to_currency total %><td/>
+                </tr>
               </table>
             </section>
             <aside>
